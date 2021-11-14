@@ -85,11 +85,12 @@ async function run() {
             res.json(result);
         });
 
+        // doctors api
         app.get('/doctors', async (req, res) => {
             const cursor = doctorsCollection.find({});
             const doctors = await cursor.toArray();
             res.json(doctors);
-        })
+        });
 
         app.post('/doctors', async (req, res) => {
             const name = req.body.name;
